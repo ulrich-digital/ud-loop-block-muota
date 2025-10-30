@@ -33,6 +33,7 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 ---
 
 ## Screenshots
+
 ### Frontend-Ansicht
 
 ![Frontend-Ansicht](./assets/ud-loop-block-muota.png)
@@ -51,6 +52,7 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 
 * Standardmässig nach Veröffentlichungsdatum (`date`).
 * Keine benutzerdefinierte Sortierlogik — die Abfrage richtet sich nach der gewählten `taxonomie` und der Option `nurVerknuepfteMagazinBeitraege`.
+* Oben gehaltene (Sticky) Beiträge werden in einer separaten Abfrage zuerst ausgegeben und anschliessend von der Hauptabfrage ausgeschlossen. Dadurch erscheinen sie immer an erster Stelle im Loop, ohne doppelt angezeigt zu werden.
 
 ### Anzeigeoptionen
 
@@ -81,6 +83,7 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 
 * Der Block nutzt `WP_Query`, um Beiträge des gewählten Typs (`taxonomie`) abzurufen.
 * Wenn `nurVerknuepfteMagazinBeitraege = true`, wird über `meta_query` oder `post_parent` nach Beiträgen gefiltert, die mit dem aktuellen Projekt in Beziehung stehen.
+* Sticky-Posts (oben gehaltene Beiträge) werden über eine erste WP_Query abgefragt und ausgegeben, bevor die reguläre Hauptabfrage folgt. Diese Hauptabfrage schliesst Sticky-Posts explizit aus (`post__not_in`), um doppelte Darstellungen zu vermeiden.
 * Das Rendering erfolgt serverseitig (`render.php`), wodurch Inhalte jederzeit aktuell sind.
 * Für jede Kombination aus `taxonomie` und `vorschau` existiert ein passendes Template-Fragment (z. B. `template-kompakt.php`, `template-ausfuehrlich.php`).
 
