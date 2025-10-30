@@ -1,0 +1,65 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "ud/loop-block-for-ebs",
+    "title": "Projekte- und Magazin-Loop",
+    "description": "Gibt eine Vorschau der Projekte, Magazin-Beiträge und Muota erleben aus.",
+    "category": "widgets",
+    "icon": "screenoptions",
+    "keywords": [
+        "projekt",
+        "magazin",
+        "erleben",
+        "loop"
+    ],
+    "version": "1.0.0",
+    "textdomain": "ud-projekte-loop",
+    "editorStyle": "file:./build/editor-style.css",
+    "style": "file:./build/frontend-style.css",
+    "editorScript": "file:./build/editor-script.js",
+    "script": "file:./build/frontend-script.js",
+    "supports": {
+        "align": [
+            "full",
+            "wide"
+        ],
+        "anchor": true,
+        "html": false,
+        "mode": false
+    },
+    "usesContext": [
+        "postId",
+        "postType"
+    ],
+    "attributes": {
+        "taxonomie": {
+            "type": "string",
+            "default": "projekt",
+            "enum": [
+                "projekt",
+                "post",
+                "erleben"
+            ]
+        },
+        "loop": {
+            "type": "number",
+            "default": 6
+        },
+        "vorschau": {
+            "type": "string",
+            "default": "ausfuhrlich",
+            "enum": [
+                "kompakt",
+                "ausfuhrlich"
+            ]
+        },
+        "nurVerknuepfteMagazinBeitraege": {
+            "type": "boolean",
+            "default": true
+        },
+        "title": {
+            "type": "string",
+            "default": ""
+        }
+    }
+}

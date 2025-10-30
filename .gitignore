@@ -1,0 +1,26 @@
+# Verhindert, dass Dev- oder Systemdateien überhaupt ins Git-Repo gelangen
+# Node & Build
+node_modules/
+*.log
+
+# macOS
+.DS_Store
+
+# System-/Editor-Dateien
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Sass / Autoprefixer
+.sass-cache/
+.cache/
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# ZIPs oder andere Release-Dateien
+*.zip
+*.mjs

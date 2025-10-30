@@ -1,0 +1,34 @@
+/* =============================================================== *\
+   Editor Styles für .is-style-masonry-loop (innerhalb .wp-admin)
+\* =============================================================== */
+.post_loop.projekte.ausfuhrlich,
+.post_loop.erleben.ausfuhrlich,
+.post_loop.projekte.ausfuhrlich {
+}
+
+.wp-block-ud-loop-block-for-ebs{
+width: 100%;
+}
+
+.post_loop a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.post_loop {
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+    a{
+    pointer-events: none;
+}
+	.wave_button {
+		font-weight: 100;
+		i {
+			margin-right: 6px;
+			font-size: 115%;
+		}
+	}
+}

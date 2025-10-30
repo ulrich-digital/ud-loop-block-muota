@@ -1,0 +1,526 @@
+:root {
+}
+
+// ===============================================================
+// Loop-Block Container
+// .wp-block-ud-loop-block → enthält ul.ud-loop-list
+// ===============================================================
+
+// Überschrift oberhalb Loop
+.entry-content > .above_loop,
+.above_loop {
+	width: 1350px;
+	max-width: calc(100% - 40px) !important;
+	margin-top: 10vw;
+	margin-bottom: 1em;
+margin-left: auto;
+margin-right: auto;
+font-family: var(--wp--preset--font-family--brown);
+
+	&.kompakt {
+		width: 1000px;
+	}
+
+	&.projekte.ausfuhrlich,
+	&.erleben.ausfuhrlich {
+		width: 1350px;
+	}
+}
+
+// ===============================================================
+// Loop-Container
+// ===============================================================
+.post_loop {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1350px;
+	max-width: calc(100% - 40px) !important;
+	margin: 0 auto;
+	gap: 40px;
+
+	+ .post_loop {
+		margin-top: 2em;
+	}
+
+	&.kompakt {
+		width: 1000px;
+	}
+
+	&.projekte.ausfuhrlich,
+	&.erleben.ausfuhrlich {
+		width: 1350px;
+	}
+
+	&.magazin {
+		flex-direction: row;
+		align-items: stretch;
+
+		@media screen and (max-width: 1000px) {
+			flex-direction: column;
+		}
+
+		&.featured {
+			flex-direction: column;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.post_loop {
+		gap: 20px;
+	}
+}
+
+// ===============================================================
+// Einzelne Beiträge
+// ===============================================================
+.post_loop {
+	.post_item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.post_content {
+		padding: 29px 36px 5px;
+
+		@media screen and (max-width: 600px) {
+			padding: 18px 18px 0;
+		}
+	}
+}
+
+// Projekte
+.post_loop {
+	&.projekte,
+	&.erleben {
+		.post_item {
+			border-radius: var(--border-radius);
+			filter: drop-shadow(var(--wp--preset--shadow--natural));
+			flex-basis: calc((100% - 80px) / 3);
+			margin: 0;
+		}
+
+		@media screen and (max-width: 1330px) {
+			.post_item {
+				flex-basis: calc((100% - 40px) / 2);
+			}
+		}
+
+		@media screen and (max-width: 800px) {
+			.post_item {
+				flex-basis: 100%;
+			}
+		}
+
+		&.ausfuhrlich {
+			.post_item > a {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+
+		&.kompakt {
+			.post_item {
+				border-radius: calc(var(--border-radius) * 0.6);
+			}
+		}
+	}
+}
+
+// Magazin
+.post_loop.magazin {
+	.post_item {
+		flex-basis: calc(50% - 20px);
+		background: #a4b081;
+		border-radius: var(--border-radius);
+	}
+
+	&.kompakt {
+		.post_item {
+			flex-basis: calc(50% - 20px);
+			border-radius: calc(var(--border-radius) * 0.6);
+			padding: calc(24px - 0.25em) 24px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5em;
+			justify-content: space-between;
+			position: relative;
+			box-shadow: var(--wp--preset--shadow--natural);
+
+			.post_content {
+				padding: 0;
+			}
+
+			.post_title {
+				font-size: 25px;
+				line-height: 1em;
+				margin-bottom: 0.25em;
+			}
+		}
+	}
+
+	&.featured {
+		.post_item {
+			width: 100%;
+			flex-basis: 100%;
+			border-radius: var(--border-radius);
+			box-shadow: var(--wp--preset--shadow--natural);
+		}
+
+		.post_content {
+			margin-top: -10px;
+
+			@media screen and (max-width: 600px) {
+				padding: calc(18px - 0.25em) 18px;
+				margin-top: 0;
+			}
+		}
+
+		.projekt_link {
+			padding: 1em 36px 36px;
+			margin-right: 120px;
+
+			@media screen and (max-width: 600px) {
+				padding: 1.5em 18px 1.25em;
+			}
+		}
+
+		&.kompakt {
+			.post_item {
+				border-radius: calc(var(--border-radius) * 0.6);
+			}
+		}
+	}
+}
+
+// ===============================================================
+// Image
+// ===============================================================
+.post_loop {
+	.post_image_container {
+		position: relative;
+		overflow: hidden;
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
+		container-type: inline-size;
+	}
+
+	.post_thumbnail img {
+		width: 100%;
+		margin-top: 1px;
+		object-fit: cover;
+		height: auto;
+		aspect-ratio: 4 / 3;
+	}
+
+	.post_overlay {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 110px;
+		pointer-events: none;
+		/*@media screen and (max-width: 600px) {
+			height: 50px;
+		}*/
+	}
+
+@container (max-width: 400px) {
+		.post_overlay {
+			height: 90px;
+		}
+	}
+
+	@container (max-width: 300px) {
+		.post_overlay {
+			height: 60px;
+		}
+	}
+}
+
+// ===============================================================
+// Typo
+// ===============================================================
+.entry-content h2.wp-block-heading.above_loop {
+	font-size: 42px;
+	line-height: 1em;
+
+	@media screen and (max-width: 600px) {
+		font-size: 30px;
+	}
+}
+
+.post_loop {
+	.post_title {
+		font-size: 42px;
+		font-family: var(--wp--preset--font-family--brown);
+		line-height: 1em;
+		margin-bottom: 0.75em;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+
+	.post_item time,
+	.projekt_link,
+	.post_excerpt {
+		line-height: 1.25em;
+		max-width: 80%;
+		@media screen and (max-width: 600px) {
+			max-width: 75%;
+		}
+	}
+
+	.post_item time {
+		font-size: 18px;
+	}
+
+	.post_link {
+		line-height: 1em;
+	}
+}
+
+// Projekte Typo
+.post_loop.projekte .post_item .post_title,
+.post_loop.erleben .post_item .post_title {
+	font-size: 30px;
+	line-height: 1.25em;
+}
+
+.post_loop.projekte.kompakt .post_item .post_title,
+.post_loop.erleben.kompakt .post_item .post_title {
+	margin-bottom: 2.75em;
+}
+
+// Magazin Typo
+.post_loop.magazin.featured .post_title {
+	margin-top: 0.25em;
+}
+
+@media screen and (max-width: 600px) {
+	.post_loop {
+		.post_item time,
+		.projekt_link {
+			font-size: 13px;
+			line-height: 1.25em;
+		}
+
+		.post_title,
+		&.projekte .post_item .post_title,
+		&.erleben .post_item .post_title {
+			font-size: 22px;
+			margin-bottom: 0.5em;
+		}
+
+		.post_link {
+			font-size: 18px;
+		}
+	}
+}
+
+// ===============================================================
+// Wave-Button
+// ===============================================================
+.post_loop {
+	.wave_button {
+		position: relative;
+		position: absolute;
+		z-index: 2;
+		bottom: 0;
+		right: 0;
+		width: fit-content;
+		text-align: right;
+		padding: 0 24px 16px 0;
+
+		@media screen and (max-width: 600px) {
+			padding: 0 12px 8px 0;
+		}
+
+		.post_link {
+			display: flex;
+			justify-content: flex-end;
+			font-size: 24px;
+			line-height: 1em;
+			text-transform: uppercase;
+			padding: 0;
+
+			@media screen and (max-width: 600px) {
+				font-size: 18px;
+			}
+		}
+
+		.overlay_bottom {
+			position: absolute;
+			z-index: -1;
+			right: 0;
+			bottom: 0;
+			width: 290px;
+			min-width: 290px;
+			height: 70px;
+			margin-left: auto;
+			margin-right: 0;
+			border-bottom-right-radius: var(--border-radius);
+
+			@media screen and (max-width: 600px) {
+				height: 44px;
+				min-width: 200px;
+			}
+		}
+	}
+
+	&.kompakt .wave_button .overlay_bottom {
+		border-bottom-right-radius: calc(var(--border-radius) * 0.6);
+	}
+
+	.wave_button_only_text {
+		.post_link {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: 3;
+			padding-right: 15px;
+			padding-bottom: 15px;
+
+			@media screen and (max-width: 600px) {
+				padding-left: 0;
+			}
+		}
+
+		.overlay_bottom {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			border-bottom-right-radius: calc(var(--border-radius) * 0.6);
+			height: 57px;
+			min-width: 250px;
+
+			@media screen and (max-width: 600px) {
+				height: 50px;
+				min-width: 200px;
+			}
+		}
+	}
+}
+
+// ===============================================================
+// Colors
+// ===============================================================
+.post_loop {
+	.wave_button .overlay_bottom path,
+	.wave_button_only_text .overlay_bottom path {
+		fill: var(--wp--preset--color--sand-light);
+	}
+
+	.wave_button .post_link,
+	.wave_button_only_text .post_link {
+		color: var(--wp--preset--color--petrol);
+	}
+}
+
+.post_loop.projekte,
+.post_loop.erleben {
+	.post_item,
+	.post_title {
+		background-color: var(--wp--preset--color--petrol);
+		color: var(--wp--preset--color--sand-light);
+	}
+
+	.wave_button .overlay_bottom path,
+	.wave_button_only_text .overlay_bottom path {
+		fill: var(--wp--preset--color--sand-dark);
+	}
+
+	&.sand_dark {
+		.wave_button .overlay_bottom path,
+		.wave_button_only_text .overlay_bottom path {
+			fill: var(--wp--preset--color--sand-light);
+		}
+	}
+}
+
+.post_loop.magazin {
+	.post_title,
+	a.post_link {
+		color: white;
+	}
+
+	.post_content {
+		color: var(--wp--preset--color--petrol);
+	}
+
+	svg path {
+		fill: var(--wp--preset--color--petrol);
+	}
+	.wave_button svg path {
+		fill: var(--wp--preset--color--petrol);
+	}
+	&.kompakt {
+		.post_item {
+			background-color: var(--wp--preset--color--sand-dark);
+		}
+
+		&.sand_dark {
+			.post_item {
+				background-color: var(--wp--preset--color--sand-light);
+			}
+
+			.post_title {
+				color: var(--wp--preset--color--petrol);
+			}
+
+			a.post_link {
+				color: var(--wp--preset--color--sand-light);
+			}
+		}
+
+		a.post_link {
+			color: var(--wp--preset--color--sand-dark);
+		}
+
+		.wave_button .overlay_bottom path,
+		.wave_button_only_text .overlay_bottom path {
+			fill: var(--wp--preset--color--petrol);
+		}
+	}
+
+	&.featured {
+		.post_item {
+			background-color: var(--wp--preset--color--petrol);
+			color: var(--wp--preset--color--sand-light);
+		}
+
+		.post_content,
+		time,
+		.post_title {
+			color: var(--wp--preset--color--sand-light);
+		}
+
+		.projekt_link {
+			color: var(--wp--preset--color--sand-dark);
+		}
+
+		a.post_link {
+			color: var(--wp--preset--color--petrol);
+		}
+
+		svg path {
+			fill: var(--wp--preset--color--sand-light);
+		}
+
+		&.kompakt {
+			.wave_button .overlay_bottom path,
+			.wave_button_only_text .overlay_bottom path {
+				fill: var(--wp--preset--color--sand-dark);
+			}
+		}
+	}
+}
+
+// Bild Overlay
+.post_loop .post_overlay path {
+	fill: var(--wp--preset--color--petrol);
+}
