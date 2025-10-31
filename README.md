@@ -78,21 +78,11 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 
 ## 3. Logik & Datenfluss
 
-* Der Block nutzt `WP_Query`, um Beiträge des gewählten Typs (`taxonomie`) abzurufen.
-* Wenn `nurVerknuepfteMagazinBeitraege = true`, wird über `meta_query` oder `post_parent` nach Beiträgen gefiltert, die mit dem aktuellen Projekt in Beziehung stehen.
 * Sticky-Posts (oben gehaltene Beiträge) werden über eine erste WP_Query abgefragt und ausgegeben, bevor die reguläre Hauptabfrage folgt. Diese Hauptabfrage schliesst Sticky-Posts explizit aus (`post__not_in`), um doppelte Darstellungen zu vermeiden.
-* Das Rendering erfolgt serverseitig (`render.php`), wodurch Inhalte jederzeit aktuell sind.
-* Für jede Kombination aus `taxonomie` und `vorschau` existiert ein passendes Template-Fragment (z. B. `template-kompakt.php`, `template-ausfuehrlich.php`).
 
 
 
-## 4. Editor-Integration
 
-* **`edit.js`**
-
-  * Dynamische Optionen für `taxonomie`, Vorschauart und Filter.
-  * Vorschau wird via `ServerSideRender` direkt im Editor angezeigt.
-  * UI-Komponenten: `SelectControl`, `ToggleControl`, `TextControl`.
 
 
 
