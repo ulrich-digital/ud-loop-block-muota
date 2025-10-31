@@ -17,6 +17,10 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
   * Zwei Layoutvarianten: **kompakt** (Bild & Titel) oder **ausführlich** (inkl. Textauszug).
   * Anzahl der Beiträge frei wählbar (Standard: 6).
   * Optional eigene Blocküberschrift (`title`).
+  * Sticky-Beiträge (oben gehaltene Posts) werden automatisch zuerst angezeigt.
+    Sie werden über eine separate WP_Query abgefragt und danach von der Hauptabfrage ausgeschlossen (`post__not_in`),
+    um doppelte Darstellungen zu vermeiden.
+
 
 * **Verknüpfungslogik**
 
@@ -72,13 +76,6 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 | `projekt`              | Projekte aus dem CPT „Projekt“             |
 | `post`                 | Magazinbeiträge aus dem Standard-Post-Type |
 | `erleben`              | Inhalte aus dem Bereich „Muota erleben“    |
-
-
-
-
-## 3. Logik & Datenfluss
-
-* Sticky-Posts (oben gehaltene Beiträge) werden über eine erste WP_Query abgefragt und ausgegeben, bevor die reguläre Hauptabfrage folgt. Diese Hauptabfrage schliesst Sticky-Posts explizit aus (`post__not_in`), um doppelte Darstellungen zu vermeiden.
 
 
 
