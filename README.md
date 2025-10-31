@@ -68,10 +68,11 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 ## 2. Post-Types & Taxonomien
 
 | Inhaltstyp / Taxonomie | Beschreibung                               |
-| - |  |
+|-------------------------|--------------------------------------------|
 | `projekt`              | Projekte aus dem CPT „Projekt“             |
 | `post`                 | Magazinbeiträge aus dem Standard-Post-Type |
 | `erleben`              | Inhalte aus dem Bereich „Muota erleben“    |
+
 
 
 
