@@ -3,7 +3,7 @@
 Block zur dynamischen Darstellung von Projekten, Magazin-Beiträgen und *Muota erleben*-Inhalten.
 Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und erkennt automatisch den passenden Kontext.
 
----
+
 
 ## Funktionen
 
@@ -30,21 +30,17 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
   * Umschalten zwischen Vorschauvarianten (`kompakt` / `ausführlich`).
   * Echtzeit-Rendering im Editor über `ServerSideRender`.
 
----
+
 
 ## Screenshots
 
-### Frontend-Ansicht
-
 ![Frontend-Ansicht](./assets/ud-loop-block-muota.png)
-*Abbildung: Ausgabe der kombinierten Projekte- und Magazin-Loop.*
-
-### Editor-Ansicht
+*Ausgabe der kombinierten Projekte- und Magazin-Loop.*
 
 ![Editor-Ansicht](./assets/editor-view.png)
-*Abbildung: Auswahl der Inhaltsquelle und Vorschau im Block-Editor.*
+*Auswahl der Inhaltsquelle und Vorschau im Block-Editor.*
 
----
+
 
 ## 1. Sortierung, Anzeigeoptionen & Breakpoints
 
@@ -67,17 +63,17 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 * Das Layout ist responsive gestaltet.
 * Anzahl und Anordnung der Loop-Elemente passen sich automatisch dem Viewport an.
 
----
+
 
 ## 2. Post-Types & Taxonomien
 
 | Inhaltstyp / Taxonomie | Beschreibung                               |
-| ---------------------- | ------------------------------------------ |
+| - |  |
 | `projekt`              | Projekte aus dem CPT „Projekt“             |
 | `post`                 | Magazinbeiträge aus dem Standard-Post-Type |
 | `erleben`              | Inhalte aus dem Bereich „Muota erleben“    |
 
----
+
 
 ## 3. Logik & Datenfluss
 
@@ -87,7 +83,7 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
 * Das Rendering erfolgt serverseitig (`render.php`), wodurch Inhalte jederzeit aktuell sind.
 * Für jede Kombination aus `taxonomie` und `vorschau` existiert ein passendes Template-Fragment (z. B. `template-kompakt.php`, `template-ausfuehrlich.php`).
 
----
+
 
 ## 4. Editor-Integration
 
@@ -97,23 +93,19 @@ Er kombiniert verschiedene Inhaltstypen in einer einheitlichen Loop-Struktur und
   * Vorschau wird via `ServerSideRender` direkt im Editor angezeigt.
   * UI-Komponenten: `SelectControl`, `ToggleControl`, `TextControl`.
 
----
 
-## 5. Anforderungen
 
-* WordPress ≥ 6.7
-* PHP ≥ 7.4
 
----
+
+
 
 ## Autor
 
-**ulrich.digital gmbh**
-[https://ulrich.digital](https://ulrich.digital)
+[ulrich.digital gmbh](https://ulrich.digital)
 
----
 
 ## Lizenz
 
 GPL v2 or later
 [https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)
+
